@@ -105,6 +105,10 @@
      GRANT ALL PRIVILEGES ON *.* TO 'your_username'@'%' WITH GRANT OPTION;
      FLUSH PRIVILEGES;
      ```
+   - 重启mysql
+     ```
+     sudo systemctl restart mysql
+     ```
   
      **sql讲解：**  
    
@@ -123,18 +127,17 @@
    编辑/etc/mysql/mariadb.conf.d/50-server.cnf文件中bind-address = 0.0.0.0
 
    这一行指定了 MySQL 服务器绑定的 IP 地址。在这里，0.0.0.0 表示 MySQL 将在所有可用的网络接口上监听连接。这意味着 MySQL 将接受来自任何 IP 地址的连接请求。如果你希望 MySQL 服务器只接受特定 IP 地址的连接请求，可以将 bind-address 设置为该 IP 地址。
+
+   7.3
+
+   需要开启服务器的TCP协议3306端口
      
 9. **防火墙配置**（可选）：如果您启用了防火墙（例如 UFW），请确保允许 MariaDB 的通信。您可以运行以下命令允许 MariaDB 流量：
 
    ```bash
    sudo ufw allow mysql
    ```
-
-现在，您已经成功安装并配置了 MariaDB（MySQL）服务器。
-
-**补充**
-
-如果需要远程登录（例如：Navicat)需要开启服务器的TCP协议3306端口
+10. ***现在，您已经成功安装并配置了 MariaDB（MySQL）服务器。***
 
 ---
 
@@ -149,10 +152,10 @@
    ```
 
 2. #### 安装 PHP
-这行指令在 Ubuntu 系统上安装 PHP 7.3 及其常用扩展。下面是每个部分的详细解释：
+这行指令在 Ubuntu 系统上安装 PHP 7.4 及其常用扩展。下面是每个部分的详细解释：
 
 ```bash
-sudo apt install php7.3 php7.3-cli php7.3-fpm php7.3-mysql php7.3-xml php7.3-mbstring php7.3-curl php7.3-zip php7.3-intl php7.3-json
+sudo apt install php7.4 php7.4-cli php7.4-fpm php7.4-mysql php7.4-xml php7.4-mbstring php7.4-curl php7.4-zip php7.4-intl php7.4-json
 ```
 
 #### 指令解释
@@ -161,27 +164,27 @@ sudo apt install php7.3 php7.3-cli php7.3-fpm php7.3-mysql php7.3-xml php7.3-mbs
 
 2. **`apt install`**：使用 APT 包管理器安装指定的软件包。
 
-3. **`php7.3`**：安装 PHP 7.3 的核心包，包含基本的 PHP 运行环境。
+3. **`php7.4`**：安装 PHP 7.4 的核心包，包含基本的 PHP 运行环境。
 
-4. **`php7.3-cli`**：安装 PHP 命令行接口（CLI），用于在命令行中运行 PHP 脚本。
+4. **`php7.4-cli`**：安装 PHP 命令行接口（CLI），用于在命令行中运行 PHP 脚本。
 
-5. **`php7.3-fpm`**：安装 PHP FastCGI 进程管理器（FPM），用于与 Web 服务器（如 Nginx）集成，提供高性能的 PHP 环境。
+5. **`php7.4-fpm`**：安装 PHP FastCGI 进程管理器（FPM），用于与 Web 服务器（如 Nginx）集成，提供高性能的 PHP 环境。
 
-6. **`php7.3-mysql`**：安装 PHP 的 MySQL 扩展，用于与 MySQL 数据库交互。
+6. **`php7.4-mysql`**：安装 PHP 的 MySQL 扩展，用于与 MySQL 数据库交互。
 
-7. **`php7.3-xml`**：安装 PHP 的 XML 扩展，用于处理 XML 数据。
+7. **`php7.4-xml`**：安装 PHP 的 XML 扩展，用于处理 XML 数据。
 
-8. **`php7.3-mbstring`**：安装 PHP 的多字节字符串扩展，用于处理多字节编码（如 UTF-8）字符串。
+8. **`php7.4-mbstring`**：安装 PHP 的多字节字符串扩展，用于处理多字节编码（如 UTF-8）字符串。
 
-9. **`php7.3-curl`**：安装 PHP 的 cURL 扩展，用于通过 URL 传输数据（如通过 HTTP 协议）。
+9. **`php7.4-curl`**：安装 PHP 的 cURL 扩展，用于通过 URL 传输数据（如通过 HTTP 协议）。
 
-10. **`php7.3-zip`**：安装 PHP 的 ZIP 扩展，用于处理 ZIP 压缩文件。
+10. **`php7.4-zip`**：安装 PHP 的 ZIP 扩展，用于处理 ZIP 压缩文件。
 
-11. **`php7.3-intl`**：安装 PHP 的国际化（Internationalization）扩展，用于处理国际化字符和格式。
+11. **`php7.4-intl`**：安装 PHP 的国际化（Internationalization）扩展，用于处理国际化字符和格式。
 
-12. **`php7.3-json`**：安装 PHP 的 JSON 扩展，用于处理 JSON 数据格式。
+12. **`php7.4-json`**：安装 PHP 的 JSON 扩展，用于处理 JSON 数据格式。
 
-这行命令通过安装 PHP 7.3 及其一系列常用扩展，为你的系统提供了一个完整的 PHP 开发环境。这些扩展涵盖了数据库连接、字符串处理、文件压缩、网络通信和国际化等多种功能，确保你能够开发和运行大多数 PHP 应用程序。
+这行命令通过安装 PHP 7.4 及其一系列常用扩展，为你的系统提供了一个完整的 PHP 开发环境。这些扩展涵盖了数据库连接、字符串处理、文件压缩、网络通信和国际化等多种功能，确保你能够开发和运行大多数 PHP 应用程序。
 
 3. #### 验证 PHP 安装
 
@@ -195,18 +198,12 @@ sudo apt install php7.3 php7.3-cli php7.3-fpm php7.3-mysql php7.3-xml php7.3-mbs
 
 4. #### 配置 PHP（可选）
 
-   根据您的需求，您可能需要编辑 PHP 配置文件。PHP 的主配置文件是 `/etc/php/7.4/apache2/php.ini`（如果您使用的是 Apache）或 `/etc/php/7.4/fpm/php.ini`（如果您使用的是 PHP-FPM）。
+   根据您的需求，您可能需要编辑 PHP 配置文件。PHP 的主配置文件是 `/etc/php/7.4/apache2/php.ini`（如果您使用的是 Apache）。
    
    可以使用 `nano` 或任何其他文本编辑器来编辑此文件。例如：
    
    ```bash
    sudo nano /etc/php/7.4/apache2/php.ini
-   ```
-   
-   或者
-   
-   ```bash
-   sudo nano /etc/php/7.4/fpm/php.ini
    ```
 
 5. #### 重启 Web 服务器
