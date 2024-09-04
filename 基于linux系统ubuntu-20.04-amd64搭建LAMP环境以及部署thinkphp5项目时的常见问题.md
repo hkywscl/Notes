@@ -239,7 +239,7 @@ sudo apt install php7.4 php7.4-cli php7.4-fpm php7.4-mysql php7.4-xml php7.4-mbs
 
    ---
    
-   ### 常见问题
+   ### 部署thinkphp5时的常见问题
 
       #### 1.在 HTML 页面中引用 CSS 文件出现 404 错误，通常是因为服务器找不到该文件。在基于 Ubuntu、Apache、MySQL 和 ThinkPHP 5.1 的环境中，可以按以下步骤来解决这个问题：
    
