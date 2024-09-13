@@ -17,9 +17,7 @@
    ErrorLog ${APACHE_LOG_DIR}/error.log
    CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
-```
 
-```
 <VirtualHost *:80>
    ServerAdmin webmaster1@localhost
    DocumentRoot 项目路径2
