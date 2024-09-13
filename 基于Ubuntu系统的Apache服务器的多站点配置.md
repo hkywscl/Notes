@@ -1,6 +1,6 @@
 ### 基于Ubuntu系统的Apache服务器的多站点配置
 
-#### 1.修改文件/etc/apache2/sites-available/000-default.conf(相当于本地wamp\bin\apache\apache2.4.18\conf\extra\httpd-vhosts.conf)，设置不同的ServerName、DocumentRoot 和 Directory 
+#### 1.修改文件/etc/apache2/sites-available/000-default.conf(相当于windows系统本机wamp\bin\apache\apache2.4.18\conf\extra\httpd-vhosts.conf)，设置不同的ServerName、DocumentRoot 和 Directory 
 
 ```
 <VirtualHost *:80>
@@ -38,7 +38,7 @@
 
 
 
-#### 2.修改/etc/hosts 文件(相当于本地C:\Windows\System32\drivers\etc\hosts)
+#### 2.修改/etc/hosts 文件(相当于windows系统本机C:\Windows\System32\drivers\etc\hosts)
 
 `127.0.0.1   www.aaa.com
 127.0.0.1   www.bbb.com`
