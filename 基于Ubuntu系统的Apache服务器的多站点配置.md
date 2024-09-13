@@ -3,7 +3,7 @@
 #### 1.修改文件/etc/apache2/sites-available/000-default.conf(相当于windows系统本机wamp\bin\apache\apache2.4.18\conf\extra\httpd-vhosts.conf)，设置不同的ServerName、DocumentRoot 和 Directory 
 
 ```
-<VirtualHost *:80>
+<VirtualHost *:8080>
    ServerAdmin webmaster1@localhost
    DocumentRoot 项目路径1
    ServerName www.aaa.com
@@ -18,7 +18,7 @@
    CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 
-<VirtualHost *:80>
+<VirtualHost *:8081>
    ServerAdmin webmaster1@localhost
    DocumentRoot 项目路径2
    ServerName www.bbb.com
@@ -36,10 +36,11 @@
 
 
 
-#### 2.修改/etc/hosts 文件(相当于windows系统本机C:\Windows\System32\drivers\etc\hosts)
-
-`127.0.0.1   www.aaa.com
-127.0.0.1   www.bbb.com`
+#### 2.更新Apache监听端口： 编辑 /etc/apache2/ports.conf 文件，添加以下内容：
+```
+Listen 8080
+Listen 8081
+```
 
 
 
