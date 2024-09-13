@@ -5,8 +5,8 @@
 ```
 <VirtualHost *:8080>
    ServerAdmin webmaster1@localhost
-   DocumentRoot 项目路径1
-   ServerName www.aaa.com
+   DocumentRoot 项目路径1 //如果是本机就写成localhost
+   ServerName www.aaa.com 
 
    <Directory 项目路径1>
    Options Indexes FollowSymLinks
@@ -35,7 +35,6 @@
 ```
 
 
-
 #### 2.更新Apache监听端口： 编辑 /etc/apache2/ports.conf 文件，添加以下内容：
 ```
 Listen 8080
@@ -43,9 +42,7 @@ Listen 8081
 ```
 
 
-
 #### 3.重启apache，`systemctl restart apache2`
-
 
 
 #### 4.完成
