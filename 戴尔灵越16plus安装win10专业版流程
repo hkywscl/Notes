@@ -1,0 +1,5 @@
+1.打开网页https://www.microsoft.com/zh-cn/software-download/windows10，F12打开开发者模式，以ipad pro显示网页，刷新网页
+2.在页面下方“选择版本”中选择“Windows 10 (多版本ISO)”，设置语言，下载64位ISO文件
+3.使用Rufus(https://rufus.ie/zh)，打开ISO文件，点击“显示高级设备选项”，勾选“USB硬盘列表”即可自动获取到已插入的移动硬盘，选择ISO文件，“镜像选项”选择“标准Windows安装”，点击开始
+4.等待完成后，即完成，可以查看到移动硬盘中出现exe安装文件。
+5.将移动硬盘插入要安装系统的电脑中，点击exe文件即可开始安装win10专业版。
